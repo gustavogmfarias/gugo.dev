@@ -2,10 +2,9 @@ import { useState } from "react";
 import { Logo } from "../Logo";
 import { HeaderContainer, LangDiv, LogoDiv, Menu } from "./styles";
 import { NavLink } from "react-router-dom";
-import { menu } from "../../TextContent/menu";
 import { LinkedinLogo } from "@phosphor-icons/react";
 import { useTheme } from "styled-components";
-import { NextSeo } from "next-seo";
+import { menuContent } from "./menuContent";
 
 export function Header() {
   const queryParams = new URLSearchParams(window.location.search);
@@ -13,10 +12,8 @@ export function Header() {
   const [lang, setLang] = useState(langGotByQueryParams);
   const theme = useTheme();
 
-  <NextSeo title="gugo.dev | Gustavo Goulart" />;
-
-  function handleSetALanguage(langguage: string) {
-    setLang(langguage);
+  function handleSetALanguage(language: string) {
+    setLang(language);
   }
 
   return (
@@ -40,7 +37,7 @@ export function Header() {
         </NavLink>
       </LogoDiv>
       <Menu>
-        {menu.map((item) => (
+        {menuContent.map((item) => (
           <NavLink
             key={`${item[lang]}`}
             to={`/${item.link}`}

@@ -2,7 +2,7 @@ type MenuItem = {
   [key: string]: string;
 };
 
-export const menu: MenuItem[] = [
+export const menuContent: MenuItem[] = [
   {
     pt: "Home",
     en: "Home",

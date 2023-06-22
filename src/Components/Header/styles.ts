@@ -5,7 +5,8 @@ export const HeaderContainer = styled.header`
   align-items: center;
   justify-content: space-between;
   text-decoration: none;
-  padding-top: 2rem;
+  padding-top: 0 4rem;
+  margin-top: 2rem;
 `;
 
 export const LogoDiv = styled.div`
@@ -23,9 +24,9 @@ export const LogoDiv = styled.div`
 export const Menu = styled.nav`
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   gap: 1rem;
-  margin-right: 5rem;
+  margin-right: 2rem;
 
   a {
     display: flex;
@@ -36,6 +37,9 @@ export const Menu = styled.nav`
 
     border-top: 3px solid transparent;
     border-bottom: 3px solid transparent;
+
+    font-family: "Roboto Medium";
+    font-size: 1rem;
 
     &:hover {
       border-bottom: 3px solid ${(props) => props.theme["green-300"]};
