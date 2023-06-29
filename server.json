@@ -2,39 +2,60 @@
   "home": {
     "menu": [
       {
-        "en": "Home",
-        "es": "Inicio",
-        "pt": "Início"
+        "name": {
+          "en": "Home",
+          "es": "Inicio",
+          "pt": "Início"
+        },
+        "link": "home"
       },
       {
-        "en": "About Me",
-        "es": "Sobre mí",
-        "pt": "Sobre mim"
+        "name": {
+          "en": "About Me",
+          "es": "Sobre mí",
+          "pt": "Sobre mim"
+        },
+        "link": "about-me"
       },
       {
-        "en": "My Skills",
-        "es": "Mis habilidades",
-        "pt": "Minhas habilidades"
+        "name": {
+          "en": "My Skills",
+          "es": "Mis habilidades",
+          "pt": "Minhas habilidades"
+        },
+        "link": "my-skills"
       },
       {
-        "en": "Professional Experience",
-        "es": "Experiencia profesional",
-        "pt": "Experiências Profissionais"
+        "name": {
+          "en": "Professional Experience",
+          "es": "Experiencia profesional",
+          "pt": "Experiências Profissionais"
+        },
+        "link": "professional-experience"
       },
       {
-        "en": "Education",
-        "es": "Educación",
-        "pt": "Educação"
+        "name": {
+          "en": "Education",
+          "es": "Educación",
+          "pt": "Educação"
+        },
+        "link": "education"
       },
       {
-        "en": "Portfolio",
-        "es": "Portafolio",
-        "pt": "Portfólio"
+        "name": {
+          "en": "Portfolio",
+          "es": "Portafolio",
+          "pt": "Portfólio"
+        },
+        "link": "portfolio"
       },
       {
-        "en": "Contact",
-        "es": "Contacto",
-        "pt": "Contato"
+        "name": {
+          "en": "Contact",
+          "es": "Contacto",
+          "pt": "Contato"
+        },
+        "link": "contact"
       }
     ],
     "buttons": {

@@ -4,24 +4,27 @@ import { GlobalStyle } from "./styles/global";
 import { Home } from "./pages/Home";
 import { BrowserRouter } from "react-router-dom";
 import { DefaultSeo } from "next-seo";
+import { LanguageProvider } from "./contexts/LanguageContext";
 
 export function App() {
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <BrowserRouter>
-        <Home />
-      </BrowserRouter>
+    <LanguageProvider>
+      <ThemeProvider theme={defaultTheme}>
+        <BrowserRouter>
+          <Home />
+        </BrowserRouter>
 
-      <GlobalStyle />
+        <GlobalStyle />
 
-      <DefaultSeo
-        openGraph={{
-          type: "website",
-          locale: "pt_BR",
-          url: "https://gugo.dev",
-          siteName: "Gugo Dev",
-        }}
-      />
-    </ThemeProvider>
+        <DefaultSeo
+          openGraph={{
+            type: "website",
+            locale: "pt_BR",
+            url: "https://gugo.dev",
+            siteName: "Gugo Dev",
+          }}
+        />
+      </ThemeProvider>
+    </LanguageProvider>
   );
 }

@@ -1,20 +1,41 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Logo } from "../Logo";
 import { HeaderContainer, LangDiv, LogoDiv, Menu } from "./styles";
 import { NavLink } from "react-router-dom";
 import { LinkedinLogo } from "@phosphor-icons/react";
 import { useTheme } from "styled-components";
-import { menuContent } from "./menuContent";
+import { useLanguage } from "../../hooks/useLanguage";
+import { api } from "../../libs/axios";
+
+interface MenuItemName {
+  en: string;
+  es: string;
+  pt: string;
+}
+interface MenuItem {
+  name: MenuItemName;
+  link: string;
+}
+
+interface MenuContent {
+  menu: MenuItem[];
+}
 
 export function Header() {
-  const queryParams = new URLSearchParams(window.location.search);
-  const langGotByQueryParams = queryParams.get("lang") || "pt";
-  const [lang, setLang] = useState(langGotByQueryParams);
   const theme = useTheme();
+  const [menuContent, setMenuContent] = useState<MenuContent | null>(null);
 
-  function handleSetALanguage(language: string) {
-    setLang(language);
+  const { lang, handleSetLanguage } = useLanguage();
+
+  async function fetchHomeContent(): Promise<MenuContent> {
+    const response = await api.get<MenuContent>("/home");
+    setMenuContent(response.data);
+    return response.data;
   }
+
+  useEffect(() => {
+    fetchHomeContent();
+  }, []);
 
   return (
     <HeaderContainer>
@@ -37,13 +58,13 @@ export function Header() {
         </NavLink>
       </LogoDiv>
       <Menu>
-        {menuContent.map((item) => (
+        {menuContent?.menu.map((item) => (
           <NavLink
-            key={`${item[lang]}`}
+            key={`${item.name[lang as keyof typeof item.name]}`}
             to={`/${item.link}`}
-            title={item[lang]}
+            title={item.name[lang as keyof typeof item.name]}
           >
-            {item[lang]}
+            {item.name[lang as keyof typeof item.name]}
           </NavLink>
         ))}
       </Menu>
@@ -52,23 +73,26 @@ export function Header() {
         <NavLink
           to={`/?lang=pt`}
           title="Português"
-          onClick={() => handleSetALanguage("pt")}
+          onClick={() => handleSetLanguage("pt")}
         >
-          <img src="src\assets\flags\flag-brazil-portugal.png"></img>
+          <img
+            src="src\assets\flags\flag-brazil-portugal.png"
+            alt="Português"
+          />
         </NavLink>
         <NavLink
           to={`/?lang=en`}
           title="English"
-          onClick={() => handleSetALanguage("en")}
+          onClick={() => handleSetLanguage("en")}
         >
-          <img src="src\assets\flags\flag-en-us.png"></img>
+          <img src="src\assets\flags\flag-en-us.png" alt="English" />
         </NavLink>
         <NavLink
           to={`/?lang=es`}
           title="Español"
-          onClick={() => handleSetALanguage("es")}
+          onClick={() => handleSetLanguage("es")}
         >
-          <img src="src\assets\flags\flag-spain.png"></img>
+          <img src="src\assets\flags\flag-spain.png" alt="Español" />
         </NavLink>
       </LangDiv>
     </HeaderContainer>
