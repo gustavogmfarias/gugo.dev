@@ -1,6 +1,7 @@
 import { useTheme } from "styled-components";
 import {
   BodyContentContainer,
+  Button,
   ButtonsContainer,
   HeadContentContainer,
   IconsTechContainer,
@@ -86,19 +87,36 @@ export function Main() {
             {mainContent?.homeTextDescription.text2[lang as keyof TextContent]}
           </p>
           <ButtonsContainer>
-            <button>
-              {
-                mainContent?.buttons.chatButton[lang as keyof ButtonTextContent]
-                  .text
-              }
-            </button>
-            <button>
-              {
-                mainContent?.buttons.downloadCurriculumButton[
-                  lang as keyof ButtonTextContent
-                ].text
-              }
-            </button>
+            <Button variant="full">
+              <a
+                href={
+                  mainContent?.buttons.chatButton[lang as keyof TextContent]
+                    .link
+                }
+              >
+                {
+                  mainContent?.buttons.chatButton[
+                    lang as keyof ButtonTextContent
+                  ].text
+                }
+              </a>{" "}
+            </Button>
+
+            <Button variant="stroke">
+              <a
+                href={
+                  mainContent?.buttons.downloadCurriculumButton[
+                    lang as keyof TextContent
+                  ].link
+                }
+              >
+                {
+                  mainContent?.buttons.downloadCurriculumButton[
+                    lang as keyof ButtonTextContent
+                  ].text
+                }
+              </a>
+            </Button>
           </ButtonsContainer>
         </BodyContentContainer>
       </MainContentContainer>

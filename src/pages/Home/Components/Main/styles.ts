@@ -7,8 +7,11 @@ export const MainContainer = styled.main`
   text-decoration: none;
   margin-top: 10rem;
   color: ${(props) => props.theme["white"]};
-  padding: 10;
+
+  padding-left: 20rem; /* Espaçamento à esquerda */
+  padding-right: 20rem; /* Espaçamento à direita */
 `;
+
 export const ImageContainer = styled.aside`
   display: flex;
   align-items: center;
@@ -25,12 +28,14 @@ export const HeadContentContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 0.8rem;
 
   div p {
     display: flex;
     color: ${(props) => props.theme["white"]};
-    font-family: "Roboto Regular", sans-serif;
-    font-size: 0.8rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-size: 1rem;
   }
 `;
 export const IconsTechContainer = styled.div`
@@ -38,10 +43,9 @@ export const IconsTechContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
-  margin-right: 2rem;
 
   img {
-    width: 1rem;
+    width: 2rem;
   }
 `;
 
@@ -50,6 +54,7 @@ export const MainContentContainer = styled.aside`
   display: flex;
   align-items: center;
   flex-direction: column;
+  text-align: justify;
 `;
 
 export const BodyContentContainer = styled.div`
@@ -61,17 +66,46 @@ export const BodyContentContainer = styled.div`
   p {
     font-family: "Roboto";
     font-weight: 400;
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 `;
 export const ButtonsContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
+`;
 
-  button {
-    margin-top: 5rem;
-    font-family: "Roboto Regular", sans-serif;
+interface ButtonProps {
+  variant: "full" | "stroke";
+}
+
+export const Button = styled.button<ButtonProps>`
+  margin-top: 5rem;
+
+  padding: 20px;
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+  border: none;
+  border-color: none;
+
+  ${({ theme, variant }) =>
+    variant === "full"
+      ? `
+      background-color: ${theme["green-300"]};
+      color: white;
+      `
+      : `
+        background-color: transparent;
+        border: 1px solid ${theme["green-300"]}; 
+      `}
+  a {
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
     font-size: 1rem;
+
+    color: ${({ theme, variant }) =>
+      variant === "full" ? theme["white"] : theme["green-300"]};
   }
 `;

@@ -1,12 +1,16 @@
 import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  text-decoration: none;
   padding-top: 0 4rem;
   margin-top: 2rem;
+  gap: 2rem;
+
+  padding-left: 20rem; /* Espaçamento à esquerda */
+  padding-right: 20rem; /* Espaçamento à direita */
 `;
 
 export const LogoDiv = styled.div`
@@ -14,7 +18,7 @@ export const LogoDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-right: 5rem;
+  /* margin-right: 4rem; */
 
   a {
     text-decoration: none;
@@ -23,10 +27,10 @@ export const LogoDiv = styled.div`
 
 export const Menu = styled.nav`
   display: flex;
+  flex: 1;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  margin-right: 2rem;
 
   a {
     display: flex;
@@ -38,7 +42,8 @@ export const Menu = styled.nav`
     border-top: 3px solid transparent;
     border-bottom: 3px solid transparent;
 
-    font-family: "Roboto Medium";
+    font-family: "Roboto";
+    font-weight: 500;
     font-size: 1rem;
 
     &:hover {
@@ -70,7 +75,7 @@ export const LangDiv = styled.div`
   }
 
   img {
-    width: 1rem;
+    width: 1.3rem;
     border: 1px solid ${(props) => props.theme["green-300"]};
     line-height: 0;
   }
