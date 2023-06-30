@@ -10,11 +10,10 @@ export function App() {
   return (
     <LanguageProvider>
       <ThemeProvider theme={defaultTheme}>
+        <GlobalStyle />
         <BrowserRouter>
           <Home />
         </BrowserRouter>
-
-        <GlobalStyle />
 
         <DefaultSeo
           openGraph={{

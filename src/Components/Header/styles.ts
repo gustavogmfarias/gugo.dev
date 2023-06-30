@@ -8,9 +8,7 @@ export const HeaderContainer = styled.header`
   padding-top: 0 4rem;
   margin-top: 2rem;
   gap: 2rem;
-
-  padding-left: 20rem; /* Espaçamento à esquerda */
-  padding-right: 20rem; /* Espaçamento à direita */
+  margin: 2rem 0 auto;
 `;
 
 export const LogoDiv = styled.div`
@@ -59,6 +57,10 @@ export const Menu = styled.nav`
       padding: 0.5rem 2rem;
       background-color: ${(props) => props.theme["green-300"]};
       border-radius: 5px;
+    }
+
+    @media (max-width: 768px) {
+      display: none;
     }
   }
 `;

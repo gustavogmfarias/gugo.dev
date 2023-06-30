@@ -5,11 +5,15 @@ export const MainContainer = styled.main`
   align-items: center;
   justify-content: space-between;
   text-decoration: none;
-  margin-top: 10rem;
   color: ${(props) => props.theme["white"]};
 
-  padding-left: 20rem; /* Espaçamento à esquerda */
-  padding-right: 20rem; /* Espaçamento à direita */
+  margin: 8rem 0 auto;
+
+  @media (max-width: 768px) {
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 1rem 0 auto;
+  }
 `;
 
 export const ImageContainer = styled.aside`
@@ -20,6 +24,9 @@ export const ImageContainer = styled.aside`
   img {
     width: 20rem;
     overflow: none;
+  }
+
+  @media (max-width: 768px) {
   }
 `;
 
@@ -37,6 +44,13 @@ export const HeadContentContainer = styled.div`
     font-weight: 100;
     font-size: 1rem;
   }
+
+  @media (max-width: 768px) {
+    margin: 1rem 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+  }
 `;
 export const IconsTechContainer = styled.div`
   display: flex;
@@ -47,6 +61,10 @@ export const IconsTechContainer = styled.div`
   img {
     width: 2rem;
   }
+
+  @media (max-width: 768px) {
+    margin-top: 1rem;
+  }
 `;
 
 export const MainContentContainer = styled.aside`
@@ -55,6 +73,10 @@ export const MainContentContainer = styled.aside`
   align-items: center;
   flex-direction: column;
   text-align: justify;
+
+  @media (max-width: 768px) {
+    align-items: flex-start;
+  }
 `;
 
 export const BodyContentContainer = styled.div`
@@ -74,6 +96,14 @@ export const ButtonsContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  margin-top: 5rem;
+
+  @media (max-width: 768px) {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+
+    flex-direction: column;
+  }
 `;
 
 interface ButtonProps {
@@ -81,9 +111,6 @@ interface ButtonProps {
 }
 
 export const Button = styled.button<ButtonProps>`
-  margin-top: 5rem;
-
-  padding: 20px;
   padding: 0.5rem 2rem;
   border-radius: 5px;
   border: none;
