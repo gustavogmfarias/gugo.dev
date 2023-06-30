@@ -3,9 +3,9 @@ import { Logo } from "../Logo";
 import { HeaderContainer, LangDiv, LogoDiv, Menu } from "./styles";
 import { NavLink } from "react-router-dom";
 import { LinkedinLogo } from "@phosphor-icons/react";
-import { useTheme } from "styled-components";
 import { useLanguage } from "../../hooks/useLanguage";
 import { api } from "../../libs/axios";
+import { useTheme } from "styled-components";
 
 interface MenuItemName {
   en: string;
