@@ -7,6 +7,9 @@ import { useLanguage } from "../../hooks/useLanguage";
 import { api } from "../../libs/axios";
 import { useTheme } from "styled-components";
 
+import flagBrazilPortugal from "../../assets/flags/flag-brazil-portugal.png";
+import flagEnUs from "../../assets/flags/flag-en-us.png";
+import flagSpain from "../../assets/flags/flag-spain.png";
 interface MenuItemName {
   en: string;
   es: string;
@@ -75,24 +78,21 @@ export function Header() {
           title="Português"
           onClick={() => handleSetLanguage("pt")}
         >
-          <img
-            src="src\assets\flags\flag-brazil-portugal.png"
-            alt="Português"
-          />
+          <img src={flagBrazilPortugal} alt="Português" />
         </NavLink>
         <NavLink
           to={`/?lang=en`}
           title="English"
           onClick={() => handleSetLanguage("en")}
         >
-          <img src="src\assets\flags\flag-en-us.png" alt="English" />
+          <img src={flagEnUs} alt="English" />
         </NavLink>
         <NavLink
           to={`/?lang=es`}
           title="Español"
           onClick={() => handleSetLanguage("es")}
         >
-          <img src="src\assets\flags\flag-spain.png" alt="Español" />
+          <img src={flagSpain} alt="Español" />
         </NavLink>
       </LangDiv>
     </HeaderContainer>

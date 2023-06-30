@@ -12,6 +12,13 @@ import { useLanguage } from "../../../../hooks/useLanguage";
 import { useEffect, useState } from "react";
 import { api } from "../../../../libs/axios";
 
+import fotoInicial from "../../../../assets/foto-inicial.png";
+import nodejsIcon from "../../../../assets/icons/nodejs.png";
+import reactIcon from "../../../../assets/icons/react.png";
+import postgresIcon from "../../../../assets/icons/postgres.png";
+import jsIcon from "../../../../assets/icons/js.png";
+import dockerIcon from "../../../../assets/icons/docker.png";
+
 interface TextContent {
   en: string;
   es: string;
@@ -60,7 +67,7 @@ export function Main() {
   return (
     <MainContainer>
       <ImageContainer>
-        <img src="src\assets\foto-inicial.png" alt="Imagem inicial" />
+        <img src={fotoInicial} alt="Imagem inicial" />
       </ImageContainer>
       <MainContentContainer>
         <HeadContentContainer>
@@ -74,11 +81,11 @@ export function Main() {
             </p>
           </div>
           <IconsTechContainer>
-            <img src="src\assets\icons\nodejs.png" alt="Node.js" />
-            <img src="src\assets\icons\react.png" alt="React" />
-            <img src="src\assets\icons\postgres.png" alt="PostgreSQL" />
-            <img src="src\assets\icons\js.png" alt="JavaScript" />
-            <img src="src\assets\icons\docker.png" alt="Docker" />
+            <img src={nodejsIcon} alt="Node.js" />
+            <img src={reactIcon} alt="React" />
+            <img src={postgresIcon} alt="PostgreSQL" />
+            <img src={jsIcon} alt="JavaScript" />
+            <img src={dockerIcon} alt="Docker" />
           </IconsTechContainer>
         </HeadContentContainer>
         <BodyContentContainer>
