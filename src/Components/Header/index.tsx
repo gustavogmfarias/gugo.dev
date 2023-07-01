@@ -10,6 +10,7 @@ import { useTheme } from "styled-components";
 import flagBrazilPortugal from "../../assets/flags/flag-brazil-portugal.png";
 import flagEnUs from "../../assets/flags/flag-en-us.png";
 import flagSpain from "../../assets/flags/flag-spain.png";
+import { pageContent } from "../../../pageContent";
 interface MenuItemName {
   en: string;
   es: string;
@@ -31,9 +32,16 @@ export function Header() {
   const { lang, handleSetLanguage } = useLanguage();
 
   async function fetchHomeContent(): Promise<MenuContent> {
-    const response = await api.get<MenuContent>("/home");
-    setMenuContent(response.data);
-    return response.data;
+    if (process.env.NODE_ENV === "production") {
+      const response = await api.get<MenuContent>("/home");
+      setMenuContent(response.data);
+      return response.data;
+    } else {
+      const { home } = pageContent;
+      setMenuContent(home);
+
+      return home;
+    }
   }
 
   useEffect(() => {

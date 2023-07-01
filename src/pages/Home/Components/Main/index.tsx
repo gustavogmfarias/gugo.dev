@@ -18,6 +18,7 @@ import reactIcon from "../../../../assets/icons/react.png";
 import postgresIcon from "../../../../assets/icons/postgres.png";
 import jsIcon from "../../../../assets/icons/js.png";
 import dockerIcon from "../../../../assets/icons/docker.png";
+import { pageContent } from "../../../../../pageContent";
 
 interface TextContent {
   en: string;
@@ -55,9 +56,16 @@ export function Main() {
   const { lang } = useLanguage();
 
   async function fetchMainContent(): Promise<MainContent> {
-    const response = await api.get<MainContent>("/home");
-    setMainContent(response.data);
-    return response.data;
+    if (process.env.NODE_ENV === "production") {
+      const response = await api.get<MainContent>("/home");
+      setMainContent(response.data);
+      return response.data;
+    } else {
+      const { home } = pageContent;
+      setMainContent(home);
+
+      return home;
+    }
   }
 
   useEffect(() => {
