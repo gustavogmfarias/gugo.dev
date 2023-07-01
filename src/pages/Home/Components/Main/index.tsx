@@ -56,7 +56,7 @@ export function Main() {
   const { lang } = useLanguage();
 
   async function fetchMainContent(): Promise<MainContent> {
-    if (process.env.NODE_ENV === "production") {
+    if (process.env.NODE_ENV === "development") {
       const response = await api.get<MainContent>("/home");
       setMainContent(response.data);
       return response.data;

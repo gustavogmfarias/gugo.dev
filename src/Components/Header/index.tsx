@@ -32,7 +32,7 @@ export function Header() {
   const { lang, handleSetLanguage } = useLanguage();
 
   async function fetchHomeContent(): Promise<MenuContent> {
-    if (process.env.NODE_ENV === "production") {
+    if (process.env.NODE_ENV === "development") {
       const response = await api.get<MenuContent>("/home");
       setMenuContent(response.data);
       return response.data;
