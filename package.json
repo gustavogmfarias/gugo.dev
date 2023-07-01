@@ -23,6 +23,7 @@
     "vite-plugin-commonjs": "^0.8.0"
   },
   "devDependencies": {
+    "@types/node": "^20.3.3",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "@types/styled-components": "^5.1.26",
