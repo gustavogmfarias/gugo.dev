@@ -11,6 +11,7 @@ import flagBrazilPortugal from "../../assets/flags/flag-brazil-portugal.png";
 import flagEnUs from "../../assets/flags/flag-en-us.png";
 import flagSpain from "../../assets/flags/flag-spain.png";
 import { pageContent } from "../../../pageContent";
+import { Loading } from "../Loading";
 interface MenuItemName {
   en: string;
   es: string;
@@ -28,14 +29,22 @@ interface MenuContent {
 export function Header() {
   const theme = useTheme();
   const [menuContent, setMenuContent] = useState<MenuContent | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const { lang, handleSetLanguage } = useLanguage();
 
-  async function fetchHomeContent(): Promise<MenuContent> {
+  async function fetchHomeContent(): Promise<MenuContent | undefined> {
     if (process.env.NODE_ENV === "development") {
-      const response = await api.get<MenuContent>("/home");
-      setMenuContent(response.data);
-      return response.data;
+      try {
+        setIsLoading(true);
+        const response = await api.get<MenuContent>("/home");
+        setMenuContent(response.data);
+        setIsLoading(false);
+        return response.data;
+      } catch (err) {
+        setIsLoading(false);
+        console.error(err);
+      }
     } else {
       const { home } = pageContent;
       setMenuContent(home);
@@ -69,15 +78,19 @@ export function Header() {
         </NavLink>
       </LogoDiv>
       <Menu>
-        {menuContent?.menu.map((item) => (
-          <NavLink
-            key={`${item.name[lang as keyof typeof item.name]}`}
-            to={`/${item.link}`}
-            title={item.name[lang as keyof typeof item.name]}
-          >
-            {item.name[lang as keyof typeof item.name]}
-          </NavLink>
-        ))}
+        {menuContent ? (
+          menuContent.menu.map((item) => (
+            <NavLink
+              key={`${item.name[lang as keyof typeof item.name]}`}
+              to={`/${item.link}`}
+              title={item.name[lang as keyof typeof item.name]}
+            >
+              {item.name[lang as keyof typeof item.name]}
+            </NavLink>
+          ))
+        ) : (
+          <Loading />
+        )}
       </Menu>
 
       <LangDiv>

@@ -19,6 +19,7 @@ import postgresIcon from "../../../../assets/icons/postgres.png";
 import jsIcon from "../../../../assets/icons/js.png";
 import dockerIcon from "../../../../assets/icons/docker.png";
 import { pageContent } from "../../../../../pageContent";
+import { Loading } from "../../../../Components/Loading";
 
 interface TextContent {
   en: string;
@@ -53,13 +54,22 @@ interface MainContent {
 export function Main() {
   const [mainContent, setMainContent] = useState<MainContent | null>(null);
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const { lang } = useLanguage();
 
-  async function fetchMainContent(): Promise<MainContent> {
+  async function fetchMainContent(): Promise<MainContent | undefined> {
     if (process.env.NODE_ENV === "development") {
-      const response = await api.get<MainContent>("/home");
-      setMainContent(response.data);
-      return response.data;
+      try {
+        setIsLoading(true);
+        const response = await api.get<MainContent>("/home");
+        setMainContent(response.data);
+        setIsLoading(false);
+        return response.data;
+      } catch (err) {
+        console.error(err);
+        setIsLoading(false);
+      }
     } else {
       const { home } = pageContent;
       setMainContent(home);
@@ -80,13 +90,17 @@ export function Main() {
       <MainContentContainer>
         <HeadContentContainer>
           <div>
-            <p>
-              {
-                mainContent?.homeTextDescription.text1[
-                  lang as keyof TextContent
-                ]
-              }
-            </p>
+            {mainContent ? (
+              <p>
+                {
+                  mainContent.homeTextDescription.text1[
+                    lang as keyof TextContent
+                  ]
+                }
+              </p>
+            ) : (
+              <Loading />
+            )}
           </div>
           <IconsTechContainer>
             <img src={nodejsIcon} alt="Node.js" />
@@ -97,40 +111,49 @@ export function Main() {
           </IconsTechContainer>
         </HeadContentContainer>
         <BodyContentContainer>
-          <p>
-            {mainContent?.homeTextDescription.text2[lang as keyof TextContent]}
-          </p>
+          {mainContent ? (
+            <p>
+              {mainContent.homeTextDescription.text2[lang as keyof TextContent]}
+            </p>
+          ) : (
+            <Loading />
+          )}
           <ButtonsContainer>
-            <Button variant="full">
-              <a
-                href={
-                  mainContent?.buttons.chatButton[lang as keyof TextContent]
-                    .link
-                }
-              >
-                {
-                  mainContent?.buttons.chatButton[
-                    lang as keyof ButtonTextContent
-                  ].text
-                }
-              </a>{" "}
-            </Button>
-
-            <Button variant="stroke">
-              <a
-                href={
-                  mainContent?.buttons.downloadCurriculumButton[
-                    lang as keyof TextContent
-                  ].link
-                }
-              >
-                {
-                  mainContent?.buttons.downloadCurriculumButton[
-                    lang as keyof ButtonTextContent
-                  ].text
-                }
-              </a>
-            </Button>
+            {mainContent ? (
+              <>
+                <Button variant="full">
+                  <a
+                    href={
+                      mainContent.buttons.chatButton[lang as keyof TextContent]
+                        .link
+                    }
+                  >
+                    {
+                      mainContent.buttons.chatButton[
+                        lang as keyof ButtonTextContent
+                      ].text
+                    }
+                  </a>
+                </Button>
+                <Button variant="stroke">
+                  <a
+                    href={
+                      mainContent.buttons.downloadCurriculumButton[
+                        lang as keyof TextContent
+                      ].link
+                    }
+                  >
+                    {
+                      mainContent.buttons.downloadCurriculumButton[
+                        lang as keyof ButtonTextContent
+                      ].text
+                    }
+                  </a>
+                </Button>
+              </>
+            ) : (
+              <Loading />
+            )}
           </ButtonsContainer>
         </BodyContentContainer>
       </MainContentContainer>
