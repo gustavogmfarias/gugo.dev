@@ -111,6 +111,7 @@ interface ButtonProps {
 }
 
 export const Button = styled.button<ButtonProps>`
+  width: 15rem;
   padding: 0.5rem 2rem;
   border-radius: 5px;
   border: none;
@@ -121,6 +122,8 @@ export const Button = styled.button<ButtonProps>`
       ? `
       background-color: ${theme["green-300"]};
       color: white;
+      background-color: ${theme["green-300"]};
+
       `
       : `
         background-color: transparent;
