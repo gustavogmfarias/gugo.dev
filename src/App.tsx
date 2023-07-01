@@ -5,6 +5,7 @@ import { Home } from "./pages/Home";
 import { BrowserRouter } from "react-router-dom";
 import { DefaultSeo } from "next-seo";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import { AboutMe } from "./pages/AboutMe";
 
 export function App() {
   return (
@@ -13,6 +14,7 @@ export function App() {
         <GlobalStyle />
         <BrowserRouter>
           <Home />
+          <AboutMe />
         </BrowserRouter>
 
         <DefaultSeo
