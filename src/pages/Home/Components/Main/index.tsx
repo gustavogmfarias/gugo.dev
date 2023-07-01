@@ -90,16 +90,16 @@ export function Main() {
       <MainContentContainer>
         <HeadContentContainer>
           <div>
-            {mainContent ? (
+            {isLoading ? (
+              <Loading />
+            ) : (
               <p>
                 {
-                  mainContent.homeTextDescription.text1[
+                  mainContent?.homeTextDescription.text1[
                     lang as keyof TextContent
                   ]
                 }
               </p>
-            ) : (
-              <Loading />
             )}
           </div>
           <IconsTechContainer>
@@ -111,25 +111,31 @@ export function Main() {
           </IconsTechContainer>
         </HeadContentContainer>
         <BodyContentContainer>
-          {mainContent ? (
-            <p>
-              {mainContent.homeTextDescription.text2[lang as keyof TextContent]}
-            </p>
-          ) : (
+          {isLoading ? (
             <Loading />
+          ) : (
+            <p>
+              {
+                mainContent?.homeTextDescription.text2[
+                  lang as keyof TextContent
+                ]
+              }
+            </p>
           )}
           <ButtonsContainer>
-            {mainContent ? (
+            {isLoading ? (
+              <Loading />
+            ) : (
               <>
                 <Button variant="full">
                   <a
                     href={
-                      mainContent.buttons.chatButton[lang as keyof TextContent]
+                      mainContent?.buttons.chatButton[lang as keyof TextContent]
                         .link
                     }
                   >
                     {
-                      mainContent.buttons.chatButton[
+                      mainContent?.buttons.chatButton[
                         lang as keyof ButtonTextContent
                       ].text
                     }
@@ -138,21 +144,19 @@ export function Main() {
                 <Button variant="stroke">
                   <a
                     href={
-                      mainContent.buttons.downloadCurriculumButton[
+                      mainContent?.buttons.downloadCurriculumButton[
                         lang as keyof TextContent
                       ].link
                     }
                   >
                     {
-                      mainContent.buttons.downloadCurriculumButton[
+                      mainContent?.buttons.downloadCurriculumButton[
                         lang as keyof ButtonTextContent
                       ].text
                     }
                   </a>
                 </Button>
               </>
-            ) : (
-              <Loading />
             )}
           </ButtonsContainer>
         </BodyContentContainer>

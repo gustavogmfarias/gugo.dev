@@ -78,8 +78,10 @@ export function Header() {
         </NavLink>
       </LogoDiv>
       <Menu>
-        {menuContent ? (
-          menuContent.menu.map((item) => (
+        {isLoading ? (
+          <Loading />
+        ) : (
+          menuContent?.menu.map((item) => (
             <NavLink
               key={`${item.name[lang as keyof typeof item.name]}`}
               to={`/${item.link}`}
@@ -88,8 +90,6 @@ export function Header() {
               {item.name[lang as keyof typeof item.name]}
             </NavLink>
           ))
-        ) : (
-          <Loading />
         )}
       </Menu>
 
