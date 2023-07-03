@@ -7,7 +7,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-  margin: 8rem 0 auto;
+  margin: 4rem 0 auto;
 
   align-items: center;
   justify-content: space-between;
@@ -43,7 +43,7 @@ export const Header = styled.div`
 `;
 
 export const MainContainer = styled.div`
-  width: 100%;
+  width: 80vw;
   display: flex;
   flex-direction: column;
 
@@ -56,8 +56,6 @@ export const MainContainer = styled.div`
   color: ${(props) => props.theme["gray-600"]};
 
   div {
-    width: 65%;
-
     display: flex;
 
     align-items: center;

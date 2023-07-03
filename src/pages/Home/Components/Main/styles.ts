@@ -1,13 +1,14 @@
 import styled from "styled-components";
 
 export const MainContainer = styled.main`
+  width: 80vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
   text-decoration: none;
   color: ${(props) => props.theme["white"]};
 
-  margin: 8rem 0 auto;
+  margin: 4rem 0 auto;
 
   @media (max-width: 768px) {
     justify-content: flex-start;
