@@ -106,8 +106,8 @@ export function AboutMe() {
     <Container>
       <Header>
         <IdentificationBadge size={32} color={theme["green-300"]} />
-        {aboutMeContent ? (
-          <p>{aboutMeContent.nameOfSection[lang as keyof LanguageProps]}</p>
+        {isLoading ? (
+          <p>{aboutMeContent?.nameOfSection[lang as keyof LanguageProps]}</p>
         ) : (
           <Loading />
         )}
@@ -117,8 +117,8 @@ export function AboutMe() {
           <p>INTRO</p>
         </div>
         <div>
-          {aboutMeContent ? (
-            <p>{aboutMeContent.intro[lang as keyof LanguageProps]}</p>
+          {isLoading ? (
+            <p>{aboutMeContent?.intro[lang as keyof LanguageProps]}</p>
           ) : (
             <Loading />
           )}
