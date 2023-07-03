@@ -75,7 +75,7 @@ export function AboutMe() {
 
   const { lang } = useLanguage();
 
-  async function fetchMainContent(): Promise<AboutMeContent | undefined> {
+  async function fetchAboutMeContent(): Promise<AboutMeContent | undefined> {
     if (process.env.NODE_ENV === "development") {
       try {
         setIsLoading(true);
@@ -97,7 +97,7 @@ export function AboutMe() {
   }
 
   useEffect(() => {
-    fetchMainContent();
+    fetchAboutMeContent();
   }, []);
 
   const theme = useTheme();
@@ -107,9 +107,9 @@ export function AboutMe() {
       <Header>
         <IdentificationBadge size={32} color={theme["green-300"]} />
         {isLoading ? (
-          <p>{aboutMeContent?.nameOfSection[lang as keyof LanguageProps]}</p>
-        ) : (
           <Loading />
+        ) : (
+          <p>{aboutMeContent?.nameOfSection[lang as keyof LanguageProps]}</p>
         )}
       </Header>
       <MainContainer>
@@ -118,9 +118,9 @@ export function AboutMe() {
         </div>
         <div>
           {isLoading ? (
-            <p>{aboutMeContent?.intro[lang as keyof LanguageProps]}</p>
-          ) : (
             <Loading />
+          ) : (
+            <p>{aboutMeContent?.intro[lang as keyof LanguageProps]}</p>
           )}
         </div>
       </MainContainer>
