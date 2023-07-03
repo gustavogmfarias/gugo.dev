@@ -101,27 +101,21 @@
       }
     }
   },
-  "aboutMe": {
+  "aboutme": {
+    "nameOfSection": { "en": "About Me", "es": "Sobre mí", "pt": "Sobre mim" },
     "intro": {
       "en": "I believe that organizations are fundamental to ensuring quality of life and societal progress. Since I was 14 years old, I have viewed work as a mission and have always been dedicated to fulfilling my roles, developing skills in projects, teamwork, competencies, and sales. I started my career at the age of 14 as a graphic designer, using Photoshop as my main tool. With 9 years of experience in digital marketing, I decided at the age of 27 to pursue my dream of becoming a programmer. Recently, at the age of 32, I completed my academic degree in Information Systems at one of the top colleges in Brazil. During the course, I discovered my passion for JavaScript and have been dedicated to improving my knowledge in this language and its main frameworks. I am currently seeking opportunities as a programmer, combining my previous experience in graphic design with my education in Information Systems. I am excited to contribute to challenging projects and expand my expertise in JavaScript and web application development. I have junior-advanced knowledge in Rent-API, Containerization, TDD, DDD, SOLID, Clean Code, and GitFlow. My personal portfolio includes study projects in Java and JavaScript, using frameworks such as ReactJS, NodeJS, and React Native. In the JavaScript field, I have participated in study projects at Rocketseat, deepening my knowledge in the main features of React, such as useEffect, useState, useContext, useMemo, useReducer, among others. I have also explored libraries like styled-components, stitches, axios, useForm, and useQuery. I have developed skills in NodeJS, creating APIs and using tools like JWT Token, Token-based Sessions, and Refresh Token, as well as frameworks like Express, Fastify, and Prisma. I have conducted tests with Jest and Vitest. I have dedicated myself to learning PostgreSQL, Docker, and version control with GitHub, always in the context of JavaScript. I consider myself at a junior-advanced level, which means I can do anything, but it may take me the time of a junior developer to accomplish it. I am prepared to contribute to any team. During my academic journey, I have developed projects such as the implementation of a genetic algorithm in JavaScript, projects in Flutter, machine learning with Python, and data analysis with Pandas, among others. All these projects can be found on my GitHub. With a solid knowledge base and a passion for programming, I am determined to pursue my career as a developer and contribute to the success of the organizations I work with.",
       "es": "Creo que las organizaciones son fundamentales para garantizar la calidad de vida y el progreso civilizatorio. Desde los 14 años, veo el trabajo como una misión y siempre me he dedicado al cumplimiento de mis funciones, desarrollando habilidades en proyectos, trabajo en equipo, competencias y ventas. Comencé mi carrera a los 14 años como diseñador gráfico, utilizando Photoshop como mi principal herramienta. Con 9 años de experiencia en marketing digital, a los 27 años decidí seguir mi sueño de convertirme en programador. Recientemente, a los 32 años, completé mi formación académica en Sistemas de Información en una de las mejores universidades de Brasil. Durante el curso, descubrí mi pasión por JavaScript y me he dedicado a mejorar mis conocimientos en este lenguaje y sus principales frameworks. Actualmente, busco oportunidades como programador, combinando mi experiencia previa en diseño gráfico con mi formación en Sistemas de Información. Estoy emocionado de contribuir en proyectos desafiantes y ampliar mi experiencia en JavaScript y desarrollo de aplicaciones web. Poseo conocimientos junior-avanzados en Rent-API, Containización, TDD, DDD, SOLID y Clean Code, GitFlow. Mi portafolio personal abarca proyectos de estudio en Java y JavaScript, utilizando frameworks como ReactJS, NodeJS y React Native. En el área de JavaScript, participé en proyectos de estudio en Rocketseat, profundizando mis conocimientos en las principales funcionalidades de React, como useEffect, useState, useContext, useMemo, useReducer, entre otros. También exploré bibliotecas como styled-components, stitches, axios, useForm y useQuery. Desarrollé habilidades en NodeJS, creando APIs y utilizando herramientas como Token JWT, Sesiones con Token y Refresh Token, además de frameworks como Express, Fastify y Prisma. Realicé pruebas con Jest y Vitest. Me he dedicado a aprender PostgreSQL, Docker y control de versiones con GitHub, siempre en el contexto de JavaScript. Me considero en un nivel junior-avanzado, lo que significa que puedo hacer cualquier cosa, pero puedo tardar el tiempo de un desarrollador junior en hacerlo. Estoy preparado para contribuir en cualquier equipo. Durante mi trayectoria académica, desarrollé proyectos como la implementación de un algoritmo genético en JavaScript, proyectos en Flutter, aprendizaje automático con Python y análisis de datos con Pandas, entre otros. Todos estos proyectos se pueden encontrar en mi GitHub. Con una sólida base de conocimientos y pasión por la programación, estoy decidido a seguir mi carrera como desarrollador y contribuir al éxito de las organizaciones en las que trabajaré.",
       "pt": "Acredito que as organizações são fundamentais para garantir qualidade de vida e progresso civilizatório. Desde os meus 14 anos, encaro o trabalho como uma missão e sempre me dediquei ao cumprimento das minhas funções, desenvolvendo habilidades em projetos, trabalho em equipe, competências e vendas. Iniciei minha carreira aos 14 anos como designer gráfico, utilizando o Photoshop como minha principal ferramenta. Com 9 anos de experiência em marketing digital, decidi aos 27 anos seguir meu sonho de me tornar programador. Recentemente, aos 32 anos, concluí minha formação acadêmica em Sistemas de Informação em uma das melhores faculdades do Brasil. Durante o curso, descobri minha paixão pelo JavaScript e tenho me dedicado a aprimorar meus conhecimentos nessa linguagem e em seus principais frameworks. Busco atualmente oportunidades como programador, combinando minha experiência anterior em design gráfico com minha formação em Sistemas de Informação. Estou entusiasmado para contribuir em projetos desafiadores e expandir minha expertise em JavaScript e desenvolvimento de aplicativos web. Possuo conhecimentos junior-avançados em Rent-API, Containização, TDD, DDD, SOLID e Clean Code, GitFlow. Meu portfólio pessoal abrange projetos de estudo em Java e JavaScript, utilizando frameworks como ReactJS, NodeJS e React Native. Na área do JavaScript, participei de projetos de estudo na Rocketseat, aprofundando meu conhecimento nas principais funcionalidades do React, como useEffect, useState, useContext, useMemo, useReducer, entre outros. Também explorei bibliotecas como styled-components, stitches, axios, useForm e useQuery. Desenvolvi habilidades em NodeJS, criando APIs e utilizando ferramentas como Token JWT, Sessões com Token e Refresh Token, além de frameworks como Express, Fastify e Prisma. Realizei testes com Jest e Vitest. Dediquei-me a aprender PostgreSQL, Docker e versionamento com o GitHub, sempre no contexto do JavaScript. Considero-me em um nível júnior-avançado - significa que consigo fazer qualquer coisa, porém, levo o tempo de um junior para isso - e estou preparado para contribuir em qualquer equipe. Durante minha trajetória acadêmica, desenvolvi projetos como a implementação de um algoritmo genético em JavaScript, projetos em Flutter, machine learning com Python e análise de dados com Pandas, entre outros. Todos esses projetos podem ser conferidos no meu GitHub. Com uma sólida base de conhecimento e paixão pela programação, estou determinado a seguir minha carreira como desenvolvedor e contribuir para o sucesso das organizações onde atuarei."
     },
-    "name": {
-      "en": "Gustavo Goulart de Mello Farias",
-      "es": "Gustavo Goulart de Mello Farias",
-      "pt": "Gustavo Goulart de Mello Farias"
-    },
+    "name": "Gustavo Goulart de Mello Farias",
+
     "birthDate": "1991-09-16T00:00:00Z",
-    "age": {
-      "en": "31 years old",
-      "es": "31 años",
-      "pt": "31 anos"
-    },
     "phone": {
-      "en": "Br (55) 22 996-030-260",
-      "es": "Br (55) 22 996-030-260",
-      "pt": "Br (55) 22 996-030-260"
+      "country": "Br",
+      "countryCode": "55",
+      "stateCode": "22",
+      "phoneNumber": "996-030-260"
     },
     "nationality": {
       "en": "Brazilian",
@@ -130,24 +124,15 @@
     },
     "address": {
       "street": {
-        "en": "Rua José de Assis Barbosa",
-        "es": "Rua José de Assis Barbosa",
+        "en": "José de Assis Barbosa Street",
+        "es": "Calle José de Assis Barbosa",
         "pt": "Rua José de Assis Barbosa"
       },
-      "number": {
-        "en": "714",
-        "es": "714",
-        "pt": "714"
-      },
-      "city": {
-        "en": "Itaperuna",
-        "es": "Itaperuna",
-        "pt": "Itaperuna"
-      },
+      "houseNumber": "714",
+      "city": "Itaperuna",
       "state": {
-        "en": "RJ",
-        "es": "RJ",
-        "pt": "RJ"
+        "name": "Rio de Janeiro",
+        "acronym": "RJ"
       },
       "country": {
         "en": "Brazil",
@@ -155,11 +140,7 @@
         "pt": "Brasil"
       }
     },
-    "birthPlace": {
-      "en": "Itaperuna-RJ",
-      "es": "Itaperuna-RJ",
-      "pt": "Itaperuna-RJ"
-    },
+    "birthPlace": "Itaperuna-RJ",
     "maritalStatus": {
       "en": "Married",
       "es": "Casado",
@@ -167,28 +148,14 @@
     },
     "children": [
       {
+        "name": "Maurício Medeiros Farias",
         "dateOfBirth": "2009-09-28T00:00:00Z"
       }
     ],
     "interests": {
-      "en": {
-        "family": "Family",
-        "books": "Books",
-        "chess": "Chess",
-        "series": "Series"
-      },
-      "es": {
-        "family": "Familia",
-        "books": "Libros",
-        "chess": "Ajedrez",
-        "series": "Series"
-      },
-      "pt": {
-        "family": "Família",
-        "books": "Livros",
-        "chess": "Xadrez",
-        "series": "Séries"
-      }
+      "en": ["Family", "Books", "Chess", "Series"],
+      "es": ["Familia", "Libros", "Ajedrez", "Series"],
+      "pt": ["Família", "Livros", "Xadrez", "Séries"]
     }
   },
   "professionalExperiences": {

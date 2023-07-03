@@ -1,5 +1,9 @@
+import { useEffect, useState } from "react";
+import { useLanguage } from "../../hooks/useLanguage";
 import { PersonalDetail } from "./PersonalDetail";
 import {
+  Button,
+  ButtonsContainer,
   Container,
   Header,
   MainContainer,
@@ -7,38 +11,117 @@ import {
 } from "./styles";
 import { IdentificationBadge } from "@phosphor-icons/react";
 import { useTheme } from "styled-components";
+import { api } from "../../libs/axios";
+import { pageContent } from "../../../pageContent";
+import { Loading } from "../../Components/Loading";
+
+interface LanguageProps {
+  en: string;
+  es: string;
+  pt: string;
+}
+
+interface PhoneProps {
+  country: string;
+  countryCode: string;
+  stateCode: string;
+  phoneNumber: string;
+}
+
+interface StateProps {
+  name: string;
+  acronym: string;
+}
+
+interface AddressProps {
+  street: LanguageProps;
+  houseNumber: string;
+  city: string;
+  state: StateProps;
+  country: LanguageProps;
+}
+
+interface ChildrenProps {
+  name: string;
+  dateOfBirth: string;
+}
+
+interface InterestsProps {
+  en: string[];
+  es: string[];
+  pt: string[];
+}
+
+interface AboutMeContent {
+  nameOfSection: LanguageProps;
+  intro: LanguageProps;
+  name: string;
+  birthDate: string;
+  phone: PhoneProps;
+  nationality: LanguageProps;
+  address: AddressProps;
+  birthPlace: string;
+  maritalStatus: LanguageProps;
+  children: ChildrenProps[];
+  interests: InterestsProps;
+}
 
 export function AboutMe() {
+  const [aboutMeContent, setAboutMeContent] = useState<AboutMeContent | null>(
+    null
+  );
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  const { lang } = useLanguage();
+
+  async function fetchMainContent(): Promise<AboutMeContent | undefined> {
+    if (process.env.NODE_ENV === "development") {
+      try {
+        setIsLoading(true);
+        const response = await api.get<AboutMeContent>("/aboutme");
+        setAboutMeContent(response.data);
+
+        setIsLoading(false);
+        return response.data;
+      } catch (err) {
+        console.error(err);
+        setIsLoading(false);
+      }
+    } else {
+      const { aboutme } = pageContent;
+      setAboutMeContent(aboutme);
+
+      return aboutme;
+    }
+  }
+
+  useEffect(() => {
+    fetchMainContent();
+  }, []);
+
   const theme = useTheme();
+
   return (
     <Container>
       <Header>
         <IdentificationBadge size={32} color={theme["green-300"]} />
-        <p>Sobre mim</p>
+        {aboutMeContent ? (
+          <p>{aboutMeContent.nameOfSection[lang as keyof LanguageProps]}</p>
+        ) : (
+          <Loading />
+        )}
       </Header>
       <MainContainer>
         <div>
           <p>INTRO</p>
         </div>
         <div>
-          <p>
-            Comecei minha carreira aos 14 anos como designer gráfico, utilizando
-            o Photoshop como minha principal ferramenta. Posteriormente,
-            trabalhei 09 anos com marketing digital. No entanto, aos 27 anos,
-            decidi seguir meu sonho de me tornar programador e embarquei nessa
-            nova jornada. Recentemente, aos 31 anos, obtive minha formação
-            acadêmica em Sistemas de Informação em uma das melhores faculdades
-            do Brasil. Durante meu curso, descobri minha paixão pelo JavaScript
-            e tenho me dedicado a aprender cada vez mais sobre essa incrível
-            linguagem e seus principais frameworks. Atualmente, estou buscando
-            oportunidades para aplicar meus conhecimentos como programador,
-            combinando minha experiência anterior em design gráfico com minha
-            formação em Sistemas de Informação. Estou entusiasmado para
-            contribuir em projetos desafiadores e continuar expandindo minha
-            expertise em JavaScript e desenvolvimento de aplicativos web. Tenho
-            noções Avançadas de Rent-API, Containizaçao, TDD, DDD, Solid e Clean
-            Code!
-          </p>
+          {aboutMeContent ? (
+            <p>{aboutMeContent.intro[lang as keyof LanguageProps]}</p>
+          ) : (
+            <Loading />
+          )}
         </div>
       </MainContainer>
 
@@ -50,10 +133,10 @@ export function AboutMe() {
           info=""
         ></PersonalDetail>
       </PersonalDetailsContainer>
-      {/* <ButtonsContainer>
+      <ButtonsContainer>
         <Button variant="full">linkedin.com/in/gustavogmfarias</Button>
         <Button variant="transparent">github.com/gustavogmfarias</Button>
-      </ButtonsContainer> */}
+      </ButtonsContainer>
     </Container>
   );
 }
