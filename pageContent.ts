@@ -108,54 +108,165 @@ export const pageContent = {
       es: "Creo que las organizaciones son fundamentales para garantizar la calidad de vida y el progreso civilizatorio. Desde los 14 años, veo el trabajo como una misión y siempre me he dedicado al cumplimiento de mis funciones, desarrollando habilidades en proyectos, trabajo en equipo, competencias y ventas. Comencé mi carrera a los 14 años como diseñador gráfico, utilizando Photoshop como mi principal herramienta. Con 9 años de experiencia en marketing digital, a los 27 años decidí seguir mi sueño de convertirme en programador. Recientemente, a los 32 años, completé mi formación académica en Sistemas de Información en una de las mejores universidades de Brasil. Durante el curso, descubrí mi pasión por JavaScript y me he dedicado a mejorar mis conocimientos en este lenguaje y sus principales frameworks. Actualmente, busco oportunidades como programador, combinando mi experiencia previa en diseño gráfico con mi formación en Sistemas de Información. Estoy emocionado de contribuir en proyectos desafiantes y ampliar mi experiencia en JavaScript y desarrollo de aplicaciones web. Poseo conocimientos junior-avanzados en Rent-API, Containización, TDD, DDD, SOLID y Clean Code, GitFlow. Mi portafolio personal abarca proyectos de estudio en Java y JavaScript, utilizando frameworks como ReactJS, NodeJS y React Native. En el área de JavaScript, participé en proyectos de estudio en Rocketseat, profundizando mis conocimientos en las principales funcionalidades de React, como useEffect, useState, useContext, useMemo, useReducer, entre otros. También exploré bibliotecas como styled-components, stitches, axios, useForm y useQuery. Desarrollé habilidades en NodeJS, creando APIs y utilizando herramientas como Token JWT, Sesiones con Token y Refresh Token, además de frameworks como Express, Fastify y Prisma. Realicé pruebas con Jest y Vitest. Me he dedicado a aprender PostgreSQL, Docker y control de versiones con GitHub, siempre en el contexto de JavaScript. Me considero en un nivel junior-avanzado, lo que significa que puedo hacer cualquier cosa, pero puedo tardar el tiempo de un desarrollador junior en hacerlo. Estoy preparado para contribuir en cualquier equipo. Durante mi trayectoria académica, desarrollé proyectos como la implementación de un algoritmo genético en JavaScript, proyectos en Flutter, aprendizaje automático con Python y análisis de datos con Pandas, entre otros. Todos estos proyectos se pueden encontrar en mi GitHub. Con una sólida base de conocimientos y pasión por la programación, estoy decidido a seguir mi carrera como desarrollador y contribuir al éxito de las organizaciones en las que trabajaré.",
       pt: "Acredito que as organizações são fundamentais para garantir qualidade de vida e progresso civilizatório. Desde os meus 14 anos, encaro o trabalho como uma missão e sempre me dediquei ao cumprimento das minhas funções, desenvolvendo habilidades em projetos, trabalho em equipe, competências e vendas. Iniciei minha carreira aos 14 anos como designer gráfico, utilizando o Photoshop como minha principal ferramenta. Com 9 anos de experiência em marketing digital, decidi aos 27 anos seguir meu sonho de me tornar programador. Recentemente, aos 32 anos, concluí minha formação acadêmica em Sistemas de Informação em uma das melhores faculdades do Brasil. Durante o curso, descobri minha paixão pelo JavaScript e tenho me dedicado a aprimorar meus conhecimentos nessa linguagem e em seus principais frameworks. Busco atualmente oportunidades como programador, combinando minha experiência anterior em design gráfico com minha formação em Sistemas de Informação. Estou entusiasmado para contribuir em projetos desafiadores e expandir minha expertise em JavaScript e desenvolvimento de aplicativos web. Possuo conhecimentos junior-avançados em Rent-API, Containização, TDD, DDD, SOLID e Clean Code, GitFlow. Meu portfólio pessoal abrange projetos de estudo em Java e JavaScript, utilizando frameworks como ReactJS, NodeJS e React Native. Na área do JavaScript, participei de projetos de estudo na Rocketseat, aprofundando meu conhecimento nas principais funcionalidades do React, como useEffect, useState, useContext, useMemo, useReducer, entre outros. Também explorei bibliotecas como styled-components, stitches, axios, useForm e useQuery. Desenvolvi habilidades em NodeJS, criando APIs e utilizando ferramentas como Token JWT, Sessões com Token e Refresh Token, além de frameworks como Express, Fastify e Prisma. Realizei testes com Jest e Vitest. Dediquei-me a aprender PostgreSQL, Docker e versionamento com o GitHub, sempre no contexto do JavaScript. Considero-me em um nível júnior-avançado - significa que consigo fazer qualquer coisa, porém, levo o tempo de um junior para isso - e estou preparado para contribuir em qualquer equipe. Durante minha trajetória acadêmica, desenvolvi projetos como a implementação de um algoritmo genético em JavaScript, projetos em Flutter, machine learning com Python e análise de dados com Pandas, entre outros. Todos esses projetos podem ser conferidos no meu GitHub. Com uma sólida base de conhecimento e paixão pela programação, estou determinado a seguir minha carreira como desenvolvedor e contribuir para o sucesso das organizações onde atuarei.",
     },
-    name: "Gustavo Goulart de Mello Farias",
-
-    birthDate: "1991-09-16T00:00:00Z",
+    name: {
+      label: {
+        en: "Name",
+        es: "Nombre",
+        pt: "Nome",
+      },
+      data: "Gustavo Goulart de Mello Farias",
+    },
+    birthDate: {
+      label: {
+        en: "Birth Date",
+        es: "Fecha de Nacimiento",
+        pt: "Data de Nascimento",
+      },
+      data: "1991-09-16T00:00:00Z",
+    },
     phone: {
-      country: "Br",
-      countryCode: "55",
-      stateCode: "22",
-      phoneNumber: "996-030-260",
+      label: {
+        en: "Phone",
+        es: "Teléfono",
+        pt: "Telefone",
+      },
+      data: {
+        country: "Br",
+        countryCode: "55",
+        stateCode: "22",
+        phoneNumber: "996-030-260",
+      },
     },
     nationality: {
-      en: "Brazilian",
-      es: "Brasileño",
-      pt: "Brasileiro",
+      label: {
+        en: "Nationality",
+        es: "Nacionalidad",
+        pt: "Nacionalidade",
+      },
+      data: {
+        en: "Brazilian",
+        es: "Brasileño",
+        pt: "Brasileiro",
+      },
     },
     address: {
-      street: {
-        en: "José de Assis Barbosa Street",
-        es: "Calle José de Assis Barbosa",
-        pt: "Rua José de Assis Barbosa",
+      label: {
+        en: "Address",
+        es: "Dirección",
+        pt: "Endereço",
       },
-      houseNumber: "714",
-      city: "Itaperuna",
-      state: {
-        name: "Rio de Janeiro",
-        acronym: "RJ",
-      },
-      country: {
-        en: "Brazil",
-        es: "Brasil",
-        pt: "Brasil",
+      data: {
+        street: {
+          label: {
+            en: "Street",
+            es: "Calle",
+            pt: "Rua",
+          },
+          data: {
+            en: "José de Assis Barbosa Street",
+            es: "Calle José de Assis Barbosa",
+            pt: "Rua José de Assis Barbosa",
+          },
+        },
+        houseNumber: {
+          label: {
+            en: "House Number",
+            es: "Número de Casa",
+            pt: "Número da Casa",
+          },
+          data: "714",
+        },
+        city: {
+          label: {
+            en: "City",
+            es: "Ciudad",
+            pt: "Cidade",
+          },
+          data: "Itaperuna",
+        },
+        state: {
+          label: {
+            en: "State",
+            es: "Estado",
+            pt: "Estado",
+          },
+          data: {
+            name: {
+              label: {
+                en: "State Name",
+                es: "Nombre del Estado",
+                pt: "Nome do Estado",
+              },
+              data: "Rio de Janeiro",
+            },
+            acronym: {
+              label: {
+                en: "State Acronym",
+                es: "Acrónimo del Estado",
+                pt: "Sigla do Estado",
+              },
+              data: "RJ",
+            },
+          },
+        },
+        country: {
+          label: {
+            en: "Country",
+            es: "País",
+            pt: "País",
+          },
+          data: {
+            en: "Brazil",
+            es: "Brasil",
+            pt: "Brasil",
+          },
+        },
       },
     },
-    birthPlace: "Itaperuna-RJ",
+    birthPlace: {
+      label: {
+        en: "Birth Place",
+        es: "Lugar de Nacimiento",
+        pt: "Local de Nascimento",
+      },
+      data: "Itaperuna-RJ",
+    },
     maritalStatus: {
-      en: "Married",
-      es: "Casado",
-      pt: "Casado",
-    },
-    children: [
-      {
-        name: "Maurício Medeiros Farias",
-        dateOfBirth: "2009-09-28T00:00:00Z",
+      label: {
+        en: "Marital Status",
+        es: "Estado Civil",
+        pt: "Estado Civil",
       },
-    ],
+      data: {
+        en: "Married",
+        es: "Casado",
+        pt: "Casado",
+      },
+    },
+    children: {
+      label: {
+        en: "Children",
+        es: "Hijos",
+        pt: "Filhos",
+      },
+      data: [
+        {
+          name: "Maurício Medeiros Farias",
+          dateOfBirth: "2009-09-28T00:00:00Z",
+        },
+      ],
+    },
     interests: {
-      en: ["Family", "Books", "Chess", "Series"],
-      es: ["Familia", "Libros", "Ajedrez", "Series"],
-      pt: ["Família", "Livros", "Xadrez", "Séries"],
+      label: {
+        en: "Interests",
+        es: "Intereses",
+        pt: "Interesses",
+      },
+      data: {
+        en: ["Family", "Books", "Chess", "Series"],
+        es: ["Familia", "Libros", "Ajedrez", "Series"],
+        pt: ["Família", "Livros", "Xadrez", "Séries"],
+      },
     },
   },
   professionalExperiences: {

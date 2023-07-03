@@ -105,15 +105,24 @@ export const IconsTechContainter = styled.div`
   text-decoration: none;
 `;
 export const PersonalDetailsContainer = styled.div`
+  width: 80vw;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 2rem;
 
-  margin: 8rem 0 auto;
+  margin: 1rem 0 auto;
 
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 
   text-decoration: none;
+
+  @media (max-width: 768px) {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+
+    flex-direction: column;
+  }
 `;
 export const ButtonsContainer = styled.div`
   display: flex;

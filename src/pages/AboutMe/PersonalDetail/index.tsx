@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { PersonalDetailContainer } from "./styles";
 
 interface Props {
   label: string;
@@ -9,8 +10,14 @@ interface Props {
 
 export function PersonalDetail({ label, icon, variant, info }: Props) {
   return (
-    <p>
-      {label}, {icon}, {variant}, {info}
-    </p>
+    <PersonalDetailContainer variant={variant}>
+      <div>{icon}</div>
+      <div>
+        <p>{label}</p>
+      </div>
+      <div>
+        <p>{info}</p>
+      </div>
+    </PersonalDetailContainer>
   );
 }
