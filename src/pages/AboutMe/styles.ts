@@ -153,7 +153,7 @@ export const Button = styled.button<ButtonVariants>`
   color: ${({ theme, variant }) =>
     variant === "full" ? theme["white"] : theme["gray-600"]};
 
-  border: ${({ theme, variant }) => (variant === "full" ? 0 : 1)} solid;
+  border: ${({ variant }) => (variant === "full" ? 0 : 1)} solid;
   border-color: ${({ theme, variant }) =>
     variant === "full" ? theme["gray-600"] : theme["gray-600"]};
 
