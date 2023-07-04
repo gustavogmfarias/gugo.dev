@@ -238,9 +238,9 @@ export const pageContent = {
         pt: "Estado Civil",
       },
       data: {
-        en: "Married",
-        es: "Casado",
-        pt: "Casado",
+        en: "Single",
+        es: "Soltero",
+        pt: "Solteiro",
       },
     },
     children: {

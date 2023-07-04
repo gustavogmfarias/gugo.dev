@@ -6,7 +6,6 @@ export const LogoContainer = styled.main`
   font-family: "Roboto";
   font-weight: 500;
   font-size: 1.8rem;
-
   span {
     color: ${(props) => props.theme["green-300"]};
   }

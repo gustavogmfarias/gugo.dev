@@ -5,12 +5,17 @@ interface DetailContainerProps {
 }
 
 export const PersonalDetailContainer = styled.div<DetailContainerProps>`
+  min-height: 20rem;
   min-width: 20rem;
-  max-width: 30vw;
+  max-width: 100vw;
   width: 100%;
+
   display: flex;
+  flex-basis: calc(33.33% - 2rem); /* Ajuste o tamanho dos containers filhos */
   flex-direction: column;
+
   padding: 4rem;
+
   border-radius: 20px;
   background-color: ${(props) => props.theme["gray-600"]};
   overflow: hidden;
@@ -21,6 +26,7 @@ export const PersonalDetailContainer = styled.div<DetailContainerProps>`
   gap: 0.8rem;
 
   div:nth-child(2) p {
+    width: 100%;
     font-weight: 900;
     font-size: 2.3rem;
     color: ${({ theme, variant }) =>

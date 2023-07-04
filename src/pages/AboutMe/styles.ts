@@ -92,28 +92,18 @@ export const MainContainer = styled.div`
   }
 `;
 
-export const IconsTechContainter = styled.div`
-  display: flex;
-  flex-direction: row;
-
-  margin: 1rem 0 auto;
-  margin-bottom: 1rem;
-
-  align-items: center;
-  justify-content: space-between;
-
-  text-decoration: none;
-`;
 export const PersonalDetailsContainer = styled.div`
   width: 90vw;
   display: flex;
+  flex-wrap: wrap;
+
   flex-direction: row;
   gap: 2rem;
 
   margin: 1rem 0 auto;
 
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 
   text-decoration: none;
 

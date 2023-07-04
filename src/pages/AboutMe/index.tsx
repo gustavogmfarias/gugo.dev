@@ -9,7 +9,17 @@ import {
   MainContainer,
   PersonalDetailsContainer,
 } from "./styles";
-import { Gift, IdentificationBadge, Phone } from "@phosphor-icons/react";
+import {
+  Baby,
+  Flag,
+  Gift,
+  GlobeStand,
+  HouseLine,
+  IdentificationBadge,
+  MapPin,
+  MonitorPlay,
+  Phone,
+} from "@phosphor-icons/react";
 import { useTheme } from "styled-components";
 import { api } from "../../libs/axios";
 import { pageContent } from "../../../pageContent";
@@ -185,6 +195,88 @@ export function AboutMe() {
               }
               icon={<Phone size={40} color={theme["yellow-300"]} />}
               info={`0${aboutMeContent?.phone?.data.countryCode} ${aboutMeContent?.phone?.data.stateCode} ${aboutMeContent?.phone?.data.phoneNumber}`}
+            ></PersonalDetail>
+
+            <PersonalDetail
+              variant="transparent"
+              label={
+                aboutMeContent?.nationality?.label[
+                  lang as keyof LanguageProps
+                ] ?? ""
+              }
+              icon={<GlobeStand size={40} color={theme["gray-600"]} />}
+              info={
+                aboutMeContent?.nationality.data[
+                  lang as keyof typeof aboutMeContent.nationality.data
+                ] || ""
+              }
+            ></PersonalDetail>
+            <PersonalDetail
+              variant="full"
+              label={
+                aboutMeContent?.address?.label[lang as keyof LanguageProps] ??
+                ""
+              }
+              icon={<MapPin size={40} color={theme["yellow-300"]} />}
+              info={`${
+                aboutMeContent?.address?.data.street.data[
+                  lang as keyof typeof aboutMeContent.address.data.street.data
+                ]
+              }, ${aboutMeContent?.address?.data.houseNumber.data}, ${
+                aboutMeContent?.address?.data.city.data
+              }-${aboutMeContent?.address?.data.state.data.acronym.data}, ${
+                aboutMeContent?.address?.data.country.data[
+                  lang as keyof typeof aboutMeContent.address.data.country.data
+                ]
+              }`}
+            ></PersonalDetail>
+            <PersonalDetail
+              variant="transparent"
+              label={
+                aboutMeContent?.birthPlace?.label[
+                  lang as keyof LanguageProps
+                ] ?? ""
+              }
+              icon={<Flag size={40} color={theme["gray-600"]} />}
+              info={`${aboutMeContent?.birthPlace?.data}`}
+            ></PersonalDetail>
+
+            <PersonalDetail
+              variant="full"
+              label={
+                aboutMeContent?.maritalStatus?.label[
+                  lang as keyof LanguageProps
+                ] ?? ""
+              }
+              icon={<HouseLine size={40} color={theme["yellow-300"]} />}
+              info={`${
+                aboutMeContent?.maritalStatus.data[
+                  lang as keyof typeof aboutMeContent.maritalStatus.data
+                ]
+              }`}
+            ></PersonalDetail>
+            <PersonalDetail
+              variant="transparent"
+              label={
+                aboutMeContent?.children?.label[lang as keyof LanguageProps] ??
+                ""
+              }
+              icon={<Baby size={40} color={theme["gray-600"]} />}
+              info={`01 filho de ${dayjs().diff(
+                aboutMeContent?.children?.data?.[0]?.dateOfBirth,
+                "years"
+              )} anos`}
+            ></PersonalDetail>
+            <PersonalDetail
+              variant="full"
+              label={
+                aboutMeContent?.interests?.label[lang as keyof LanguageProps] ??
+                ""
+              }
+              icon={<MonitorPlay size={40} color={theme["yellow-300"]} />}
+              info={`${aboutMeContent?.interests?.data[
+                lang as keyof LanguageProps
+              ].join(", ")}`}
             ></PersonalDetail>
           </>
         )}
