@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
-  width: 80vw;
+  width: 90vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -24,7 +24,7 @@ export const LogoDiv = styled.div`
 
 export const Menu = styled.nav`
   display: flex;
-  width: 80vw;
+  width: 90vw;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;

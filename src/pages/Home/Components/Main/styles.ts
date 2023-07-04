@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const MainContainer = styled.main`
-  width: 80vw;
+  width: 90vw;
   display: flex;
   align-items: center;
   justify-content: space-between;

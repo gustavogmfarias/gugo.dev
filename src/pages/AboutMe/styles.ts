@@ -43,7 +43,7 @@ export const Header = styled.div`
 `;
 
 export const MainContainer = styled.div`
-  width: 80vw;
+  width: 90vw;
   display: flex;
   flex-direction: column;
 
@@ -64,7 +64,7 @@ export const MainContainer = styled.div`
     margin-bottom: 2rem;
 
     @media (max-width: 768px) {
-      width: 90%;
+      width: 100%;
 
       justify-content: flex-start;
       flex-direction: column;
@@ -105,7 +105,7 @@ export const IconsTechContainter = styled.div`
   text-decoration: none;
 `;
 export const PersonalDetailsContainer = styled.div`
-  width: 80vw;
+  width: 90vw;
   display: flex;
   flex-direction: row;
   gap: 2rem;
