@@ -109,24 +109,56 @@ export const PersonalDetailsContainer = styled.div`
 
   @media (max-width: 768px) {
     margin-top: 2rem;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
 
     flex-direction: column;
   }
 `;
 export const ButtonsContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 
-  margin: 8rem 0 auto;
+  margin: 3rem auto;
+
+  gap: 1rem;
 
   align-items: center;
+  justify-items: center;
   justify-content: space-between;
 
   text-decoration: none;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 interface ButtonVariants {
   variant: "full" | "transparent";
 }
-export const Button = styled.button<ButtonVariants>``;
+export const Button = styled.button<ButtonVariants>`
+  min-height: 2rem;
+  min-width: 20rem;
+  max-width: 100vw;
+  width: 100%;
+  padding: 1rem 0;
+  border-radius: 40px;
+  cursor: pointer;
+
+  gap: 0.5rem;
+
+  background-color: ${({ theme, variant }) =>
+    variant === "full" ? theme["gray-600"] : "transparent"};
+
+  color: ${({ theme, variant }) =>
+    variant === "full" ? theme["white"] : theme["gray-600"]};
+
+  border: ${({ theme, variant }) => (variant === "full" ? 0 : 1)} solid;
+  border-color: ${({ theme, variant }) =>
+    variant === "full" ? theme["gray-600"] : theme["gray-600"]};
+
+  justify-items: center;
+  justify-content: center;
+
+  font-weight: 800;
+`;

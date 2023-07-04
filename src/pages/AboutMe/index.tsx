@@ -13,9 +13,11 @@ import {
   Baby,
   Flag,
   Gift,
+  GithubLogo,
   GlobeStand,
   HouseLine,
   IdentificationBadge,
+  LinkedinLogo,
   MapPin,
   MonitorPlay,
   Phone,
@@ -262,10 +264,14 @@ export function AboutMe() {
                 ""
               }
               icon={<Baby size={40} color={theme["gray-600"]} />}
-              info={`01 filho de ${dayjs().diff(
+              info={`01 ${
+                lang === "pt" ? "filho" : lang === "es" ? "hijo" : "child"
+              }${lang === "pt" ? " de" : ","}  ${dayjs().diff(
                 aboutMeContent?.children?.data?.[0]?.dateOfBirth,
                 "years"
-              )} anos`}
+              )} ${
+                lang === "pt" ? "anos" : lang === "es" ? "años" : "years old"
+              } `}
             ></PersonalDetail>
             <PersonalDetail
               variant="full"
@@ -282,8 +288,30 @@ export function AboutMe() {
         )}
       </PersonalDetailsContainer>
       <ButtonsContainer>
-        <Button variant="full">linkedin.com/in/gustavogmfarias</Button>
-        <Button variant="transparent">github.com/gustavogmfarias</Button>
+        <Button
+          variant="full"
+          onClick={() =>
+            window.open("https://linkedin.com/in/gustavogmfarias", "_blank")
+          }
+        >
+          <LinkedinLogo
+            size={45}
+            style={{ verticalAlign: "middle", color: theme["green-300"] }}
+          />
+          linkedin.com/in/gustavogmfarias
+        </Button>
+        <Button
+          variant="transparent"
+          onClick={() =>
+            window.open("https://github.com/gustavogmfarias", "_blank")
+          }
+        >
+          <GithubLogo
+            size={45}
+            style={{ verticalAlign: "middle", color: theme["gray-600"] }}
+          />
+          github.com/gustavogmfarias
+        </Button>
       </ButtonsContainer>
     </Container>
   );
